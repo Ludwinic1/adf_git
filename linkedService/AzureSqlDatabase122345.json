@@ -1,0 +1,28 @@
+{
+	"name": "AzureSqlDatabase122345",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=njl-sql-server.database.windows.net;Initial Catalog=njl-sql-db;User ID=ludwinic",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"baseURLNAME": "https://njl-keyvault.vault.azure.net/"
+					}
+				},
+				"secretName": "sqldb-password"
+			},
+			"alwaysEncryptedSettings": {
+				"alwaysEncryptedAkvAuthType": "ManagedIdentity"
+			}
+		},
+		"connectVia": {
+			"referenceName": "MyAzureIR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
