@@ -22,9 +22,6 @@
 					"type": "LinkedServiceReference"
 				},
 				"secretName": "sqldb-password"
-			},
-			"alwaysEncryptedSettings": {
-				"alwaysEncryptedAkvAuthType": "ManagedIdentity"
 			}
 		},
 		"connectVia": {
