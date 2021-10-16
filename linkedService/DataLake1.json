@@ -2,15 +2,15 @@
 	"name": "DataLake1",
 	"properties": {
 		"parameters": {
-			"randomparam": {
+			"URL2222": {
 				"type": "string",
-				"defaultValue": "paramvalue"
+				"defaultValue": "https://storagenjl.dfs.core.windows.net"
 			}
 		},
 		"annotations": [],
 		"type": "AzureBlobFS",
 		"typeProperties": {
-			"url": "https://storagenjl.dfs.core.windows.net"
+			"url": "@{linkedService().URL2222}"
 		},
 		"connectVia": {
 			"referenceName": "MyAzureIR",
