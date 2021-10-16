@@ -19,10 +19,7 @@
 				"type": "AzureKeyVaultSecret",
 				"store": {
 					"referenceName": "AzureKeyVault1",
-					"type": "LinkedServiceReference",
-					"parameters": {
-						"baseURLNAME": "https://njl-keyvault.vault.azure.net/"
-					}
+					"type": "LinkedServiceReference"
 				},
 				"secretName": "sqldb-password"
 			},
