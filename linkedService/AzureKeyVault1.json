@@ -1,12 +1,18 @@
 {
 	"name": "AzureKeyVault1",
 	"properties": {
+		"type": "AzureKeyVault",
+		"parameters": {
+			"baseURLNAME": {
+				"type": "String",
+				"defaultValue": "https://njl-keyvault.vault.azure.net/"
+			}
+		},
+		"typeProperties": {
+			"baseUrl": "@{linkedService().baseURLNAME}"
+		},
 		"annotations": [
 			"Rando"
-		],
-		"type": "AzureKeyVault",
-		"typeProperties": {
-			"baseUrl": "https://njl-keyvault.vault.azure.net/"
-		}
+		]
 	}
 }
