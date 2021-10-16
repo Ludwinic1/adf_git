@@ -1,0 +1,9 @@
+{
+	"name": "PL_FIRST_PIPELINE",
+	"properties": {
+		"folder": {
+			"name": "Folder1"
+		},
+		"annotations": []
+	}
+}
