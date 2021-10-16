@@ -1,0 +1,29 @@
+{
+	"name": "Snowflake3",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"type": "Snowflake",
+		"annotations": [],
+		"parameters": {
+			"snowflake_db": {
+				"type": "String",
+				"defaultValue": "NEWDB"
+			},
+			"snowflake_wh": {
+				"type": "string",
+				"defaultValue": "COMPUTE_WH"
+			}
+		},
+		"typeProperties": {
+			"connectionString": "jdbc:snowflake://uv77166.east-us-2.azure.snowflakecomputing.com/?user=ludwinic1&db=@{linkedService().snowflake_db}&warehouse=@{linkedService().snowflake_wh}",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "snowflake-password2"
+			}
+		}
+	}
+}
