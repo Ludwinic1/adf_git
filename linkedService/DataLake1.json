@@ -1,20 +1,24 @@
 {
 	"name": "DataLake1",
 	"properties": {
+		"type": "AzureBlobFS",
 		"parameters": {
-			"URL2222": {
-				"type": "string",
+			"URLNAME": {
+				"type": "String",
 				"defaultValue": "https://storagenjl.dfs.core.windows.net"
+			},
+			"lsName": {
+				"type": "String",
+				"defaultValue": "datalake1"
 			}
 		},
-		"annotations": [],
-		"type": "AzureBlobFS",
 		"typeProperties": {
-			"url": "@{linkedService().URL2222}"
+			"url": "@{linkedService().URLNAME}"
 		},
 		"connectVia": {
 			"referenceName": "MyAzureIR",
 			"type": "IntegrationRuntimeReference"
-		}
+		},
+		"annotations": []
 	}
 }
