@@ -4,13 +4,17 @@
 		"parameters": {
 			"UserName": {
 				"type": "string",
+				"defaultValue": "ludwinic"
+			},
+			"databaseName": {
+				"type": "string",
 				"defaultValue": "njl-sql-db"
 			}
 		},
 		"annotations": [],
 		"type": "AzureSqlDatabase",
 		"typeProperties": {
-			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=njl-sql-server.database.windows.net;Initial Catalog=njl-sql-db;User ID=@{linkedService().UserName}",
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=njl-sql-server.database.windows.net;Initial Catalog=@{linkedService().databaseName};User ID=@{linkedService().UserName}",
 			"password": {
 				"type": "AzureKeyVaultSecret",
 				"store": {
