@@ -16,7 +16,7 @@
 			"type": "IntegrationRuntimeReference"
 		},
 		"annotations": [
-			"SomeAnnotation"
+			"This is a Data Lake Gen 2"
 		]
 	}
 }
