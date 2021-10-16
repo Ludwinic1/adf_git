@@ -7,7 +7,7 @@
 				"location": "Central US",
 				"dataFlowProperties": {
 					"computeType": "General",
-					"coreCount": 17,
+					"coreCount": 8,
 					"timeToLive": 15,
 					"cleanup": false
 				}
