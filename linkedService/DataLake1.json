@@ -6,10 +6,6 @@
 			"URLNAME": {
 				"type": "String",
 				"defaultValue": "https://storagenjl.dfs.core.windows.net"
-			},
-			"lsName": {
-				"type": "String",
-				"defaultValue": "datalake1"
 			}
 		},
 		"typeProperties": {
@@ -19,6 +15,8 @@
 			"referenceName": "MyAzureIR",
 			"type": "IntegrationRuntimeReference"
 		},
-		"annotations": []
+		"annotations": [
+			"SomeAnnotation"
+		]
 	}
 }
