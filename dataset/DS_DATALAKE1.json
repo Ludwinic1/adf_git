@@ -1,5 +1,5 @@
 {
-	"name": "DS_DATALAKE1223345566",
+	"name": "DS_DATALAKE1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "DataLake1",
