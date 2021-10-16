@@ -6,13 +6,6 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "DS_DATALAKE1",
-						"type": "DatasetReference"
-					},
-					"name": "InputFile1"
-				},
-				{
-					"dataset": {
 						"referenceName": "AzureSqlTable1",
 						"type": "DatasetReference"
 					},
@@ -21,7 +14,7 @@
 			],
 			"sinks": [],
 			"transformations": [],
-			"script": "source(output(\n\t\tid as integer,\n\t\t{ name} as string,\n\t\t{ age} as integer,\n\t\t{ salary} as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tpreferredIntegralType: 'integer') ~> InputFile1\nsource(output(\n\t\tid as integer,\n\t\temployee_name as string,\n\t\tage as integer,\n\t\tsalary as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tquery: 'SELECT * FROM dbo.employees WHERE id = 1',\n\tformat: 'query') ~> SQLINPUTSOURCE"
+			"script": "source(output(\n\t\tid as integer,\n\t\temployee_name as string,\n\t\tage as integer,\n\t\tsalary as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tquery: 'SELECT * FROM dbo.employees WHERE id = 1',\n\tformat: 'query') ~> SQLINPUTSOURCE"
 		}
 	}
 }
