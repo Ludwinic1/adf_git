@@ -1,0 +1,17 @@
+{
+	"name": "PL_FOR_EACH",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": []
+			}
+		],
+		"folder": {
+			"name": "ForEach"
+		},
+		"annotations": []
+	}
+}
