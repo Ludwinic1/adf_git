@@ -37,6 +37,11 @@
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
 										"recursive": false,
+										"wildcardFolderPath": {
+											"value": "@pipeline().parameters.mySourceDataSetFolderPath",
+											"type": "Expression"
+										},
+										"wildcardFileName": "*",
 										"enablePartitionDiscovery": false
 									},
 									"formatSettings": {
@@ -79,7 +84,13 @@
 							"outputs": [
 								{
 									"referenceName": "DS_FOR_EACH_OUTPUT",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"MyFolderPath": {
+											"value": "@item()",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
