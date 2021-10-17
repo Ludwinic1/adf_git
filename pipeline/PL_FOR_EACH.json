@@ -14,7 +14,7 @@
 				],
 				"typeProperties": {
 					"items": {
-						"value": "@pipeline().parameters.SinkOutputFolderPath",
+						"value": "@pipeline().parameters.SinkOutputFolderPathItems",
 						"type": "Expression"
 					},
 					"isSequential": true,
@@ -95,30 +95,6 @@
 												"physicalType": "String",
 												"ordinal": 3
 											}
-										},
-										{
-											"source": {
-												"name": "salary",
-												"type": "String",
-												"physicalType": "String"
-											},
-											"sink": {
-												"type": "String",
-												"physicalType": "String",
-												"ordinal": 4
-											}
-										},
-										{
-											"source": {
-												"name": "id",
-												"type": "Int16",
-												"physicalType": "String"
-											},
-											"sink": {
-												"type": "String",
-												"physicalType": "Int16",
-												"ordinal": 5
-											}
 										}
 									],
 									"typeConversion": true,
@@ -131,7 +107,13 @@
 							"inputs": [
 								{
 									"referenceName": "ds3",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"MyFolderPath": {
+											"value": "@pipeline().parameters.SourceFolderPath",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
@@ -146,13 +128,21 @@
 			}
 		],
 		"parameters": {
-			"SinkOutputFolderPath": {
+			"SinkOutputFolderPathItems": {
 				"type": "array",
-				"defaultValue": "[ForEachOutput/file1, forEachOutput/file2]"
+				"defaultValue": [
+					"ForEachOutput222/",
+					"forEachOutput/",
+					"foroutput33"
+				]
 			},
 			"SourceFolderPath": {
 				"type": "string",
 				"defaultValue": "ForEachInput/"
+			},
+			"SinkOUTFolderPath": {
+				"type": "string",
+				"defaultValue": "ForEachOutput"
 			}
 		},
 		"folder": {
