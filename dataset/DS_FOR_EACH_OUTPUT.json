@@ -5,6 +5,11 @@
 			"referenceName": "DataLake2",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"MyFolderPath": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
