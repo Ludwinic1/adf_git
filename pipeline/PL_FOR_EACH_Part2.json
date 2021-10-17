@@ -14,7 +14,7 @@
 				],
 				"typeProperties": {
 					"items": {
-						"value": "@pipeline().parameters.SinkOutputFolderPathItems",
+						"value": "@pipeline().parameters.mySinkDatasetFolderPath",
 						"type": "Expression"
 					},
 					"isSequential": true,
@@ -57,56 +57,6 @@
 								"enableStaging": false,
 								"translator": {
 									"type": "TabularTranslator",
-									"mappings": [
-										{
-											"source": {
-												"name": "id",
-												"type": "String",
-												"physicalType": "String"
-											},
-											"sink": {
-												"type": "String",
-												"physicalType": "String",
-												"ordinal": 1
-											}
-										},
-										{
-											"source": {
-												"name": "name",
-												"type": "String",
-												"physicalType": "String"
-											},
-											"sink": {
-												"type": "String",
-												"physicalType": "String",
-												"ordinal": 2
-											}
-										},
-										{
-											"source": {
-												"name": "age",
-												"type": "String",
-												"physicalType": "String"
-											},
-											"sink": {
-												"type": "String",
-												"physicalType": "String",
-												"ordinal": 3
-											}
-										},
-										{
-											"source": {
-												"name": "salary",
-												"type": "String",
-												"physicalType": "String"
-											},
-											"sink": {
-												"type": "String",
-												"physicalType": "String",
-												"ordinal": 4
-											}
-										}
-									],
 									"typeConversion": true,
 									"typeConversionSettings": {
 										"allowDataTruncation": false,
@@ -117,13 +67,7 @@
 							"inputs": [
 								{
 									"referenceName": "ds3",
-									"type": "DatasetReference",
-									"parameters": {
-										"MyFolderPath": {
-											"value": "@pipeline().parameters.SourceFolderPath",
-											"type": "Expression"
-										}
-									}
+									"type": "DatasetReference"
 								}
 							],
 							"outputs": [
@@ -138,20 +82,16 @@
 			}
 		],
 		"parameters": {
-			"SinkOutputFolderPathItems": {
+			"mySinkDatasetFolderPath": {
 				"type": "array",
 				"defaultValue": [
 					"ForEachOutput/file1",
 					"forEachOutput/file2"
 				]
 			},
-			"SourceFolderPath": {
+			"mySourceDataSetFolderPath": {
 				"type": "string",
 				"defaultValue": "ForEachInput/"
-			},
-			"SinkOUTFolderPath": {
-				"type": "string",
-				"defaultValue": "ForEachOutput"
 			}
 		},
 		"folder": {

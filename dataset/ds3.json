@@ -16,11 +16,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "Data5.txt",
-				"folderPath": {
-					"value": "@dataset().MyFolderPath",
-					"type": "Expression"
-				},
 				"fileSystem": "first-container"
 			},
 			"columnDelimiter": ",",
