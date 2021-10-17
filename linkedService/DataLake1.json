@@ -1,22 +1,16 @@
 {
 	"name": "DataLake1",
 	"properties": {
+		"annotations": [
+			"This is a Data Lake Gen 2"
+		],
 		"type": "AzureBlobFS",
-		"parameters": {
-			"URLNAME": {
-				"type": "String",
-				"defaultValue": "https://storagenjl.dfs.core.windows.net"
-			}
-		},
 		"typeProperties": {
-			"url": "@{linkedService().URLNAME}"
+			"url": "https://storagenjl.dfs.core.windows.net"
 		},
 		"connectVia": {
 			"referenceName": "MyAzureIR",
 			"type": "IntegrationRuntimeReference"
-		},
-		"annotations": [
-			"This is a Data Lake Gen 2"
-		]
+		}
 	}
 }
