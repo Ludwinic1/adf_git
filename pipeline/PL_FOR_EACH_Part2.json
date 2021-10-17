@@ -67,7 +67,13 @@
 							"inputs": [
 								{
 									"referenceName": "ds3",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"MyFolderPath": {
+											"value": "@pipeline().parameters.mySourceDataSetFolderPath",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
