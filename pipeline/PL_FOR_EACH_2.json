@@ -119,7 +119,7 @@
 											"type": "Expression"
 										},
 										"PAR_DS_FILE_NAME": {
-											"value": "@concat(pipeline().parameters.PAR_PL_OUTPUT_FILE_NAME, '_', '.csv')",
+											"value": "@concat(item().TABLE_NAME, '_', '.csv')",
 											"type": "Expression"
 										}
 									}
@@ -146,9 +146,6 @@
 			"PAR_PL_OUTPUT_FOLDER_NAME": {
 				"type": "string",
 				"defaultValue": "FOREACHOUTPUT"
-			},
-			"PAR_PL_OUTPUT_FILE_NAME": {
-				"type": "string"
 			}
 		},
 		"folder": {
