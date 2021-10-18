@@ -72,7 +72,17 @@
 							"inputs": [
 								{
 									"referenceName": "DS_SQL_TABLES_SECOND_FOR_EACH",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"TableName": {
+											"value": "@item().table_name",
+											"type": "Expression"
+										},
+										"SchemaName": {
+											"value": "@item().table_schema",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
