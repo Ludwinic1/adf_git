@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Lookup1').output.value",
+						"value": "@activity('Get Metadata1').output.childItems",
 						"type": "Expression"
 					},
 					"isSequential": true,
@@ -29,7 +29,27 @@
 							"typeProperties": {
 								"variableName": "ListOfFiles",
 								"value": {
-									"value": "@item().id",
+									"value": "@item().name",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Set variable1",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "Append variable1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "ListOfFiles",
+								"value": {
+									"value": "@item().name",
 									"type": "Expression"
 								}
 							}
@@ -55,7 +75,7 @@
 						"type": "DatasetReference"
 					},
 					"fieldList": [
-						"columnCount"
+						"childItems"
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
@@ -69,7 +89,7 @@
 		],
 		"variables": {
 			"ListOfFiles": {
-				"type": "Array"
+				"type": "String"
 			}
 		},
 		"folder": {
