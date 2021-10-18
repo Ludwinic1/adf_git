@@ -5,6 +5,11 @@
 			"referenceName": "LS_REAL_AZURE_SQL_DB",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"TableName": {
+				"type": "string"
+			}
+		},
 		"folder": {
 			"name": "ForEach"
 		},
