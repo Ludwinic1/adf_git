@@ -132,6 +132,13 @@
 			"PAR_PL_FOREACH_TABLE_NAME": {
 				"type": "string",
 				"defaultValue": "@item().TABLE_NAME"
+			},
+			"PAR_PL_OUTPUT_FOLDER_NAME": {
+				"type": "string",
+				"defaultValue": "FOREACHOUTPUT"
+			},
+			"PAR_PL_OUTPUT_FILE_NAME": {
+				"type": "string"
 			}
 		},
 		"folder": {
