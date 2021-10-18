@@ -1,0 +1,23 @@
+{
+	"name": "DS_AZURE_TABLES",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase188888888",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"UserName": "ludwinic",
+				"databaseName": "njl-sql-db"
+			}
+		},
+		"folder": {
+			"name": "ForEach"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "employees"
+		}
+	}
+}
