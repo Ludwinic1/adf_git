@@ -47,9 +47,9 @@
 							],
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "ListOfFiles",
+								"variableName": "ListOfFilesCopy",
 								"value": {
-									"value": "@item().name",
+									"value": "@variables('ListOfFiles')",
 									"type": "Expression"
 								}
 							}
@@ -89,7 +89,10 @@
 		],
 		"variables": {
 			"ListOfFiles": {
-				"type": "String"
+				"type": "Array"
+			},
+			"ListOfFilesCopy": {
+				"type": "Array"
 			}
 		},
 		"folder": {
