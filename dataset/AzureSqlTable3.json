@@ -1,0 +1,30 @@
+{
+	"name": "AzureSqlTable3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_REAL_AZURE_SQL_DB",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"PAR_DS_SCHEMA_NAME": {
+				"type": "string"
+			},
+			"PAR_DS_TABLE_NAME": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().PAR_DS_SCHEMA_NAME",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().PAR_DS_TABLE_NAME",
+				"type": "Expression"
+			}
+		}
+	}
+}
