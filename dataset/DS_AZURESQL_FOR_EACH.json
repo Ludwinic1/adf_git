@@ -10,10 +10,7 @@
 			}
 		},
 		"parameters": {
-			"TableName": {
-				"type": "string"
-			},
-			"SchemaName": {
+			"EmployeeName": {
 				"type": "string"
 			}
 		},
@@ -24,14 +21,8 @@
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": {
-				"value": "@dataset().SchemaName",
-				"type": "Expression"
-			},
-			"table": {
-				"value": "@dataset().TableName",
-				"type": "Expression"
-			}
+			"schema": "dbo",
+			"table": "employees"
 		}
 	}
 }
