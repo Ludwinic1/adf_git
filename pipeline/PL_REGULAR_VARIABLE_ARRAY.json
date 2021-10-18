@@ -1,0 +1,44 @@
+{
+	"name": "PL_REGULAR_VARIABLE_ARRAY",
+	"properties": {
+		"activities": [
+			{
+				"name": "Append variable1",
+				"type": "AppendVariable",
+				"dependsOn": [],
+				"userProperties": [
+					{
+						"name": "FirstUserProp",
+						"value": "somepropertyValue"
+					}
+				],
+				"typeProperties": {
+					"variableName": "ListOfFiles",
+					"value": {
+						"value": "@pipeline().parameters.FileName",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"FileName": {
+				"type": "string",
+				"defaultValue": "SalesIndia.txt"
+			}
+		},
+		"variables": {
+			"ListOfFiles": {
+				"type": "Array",
+				"defaultValue": [
+					"SalesU",
+					"SaluesUK"
+				]
+			}
+		},
+		"folder": {
+			"name": "Variables"
+		},
+		"annotations": []
+	}
+}
