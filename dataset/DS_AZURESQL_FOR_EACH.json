@@ -1,0 +1,37 @@
+{
+	"name": "DS_AZURESQL_FOR_EACH",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase188888888",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"UserName": "ludwinic",
+				"databaseName": "njl-sql-db"
+			}
+		},
+		"parameters": {
+			"TableName": {
+				"type": "string"
+			},
+			"SchemaName": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "ForEach"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().SchemaName",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().TableName",
+				"type": "Expression"
+			}
+		}
+	}
+}

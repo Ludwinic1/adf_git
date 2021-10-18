@@ -14,10 +14,6 @@
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": [],
-		"typeProperties": {
-			"schema": "dbo",
-			"table": "employees"
-		}
+		"schema": []
 	}
 }
