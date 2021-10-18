@@ -1,0 +1,20 @@
+{
+	"name": "DS_SQL_TABLES_SECOND_FOR_EACH",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_REAL_AZURE_SQL_DB",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"TableName": {
+				"type": "string"
+			},
+			"SchemaName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
