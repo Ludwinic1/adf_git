@@ -112,7 +112,17 @@
 							"outputs": [
 								{
 									"referenceName": "DS_OUTPUT_FOR_EACH2",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"PAR_DS_FOLDER_NAME": {
+											"value": "@pipeline().parameters.PAR_PL_OUTPUT_FOLDER_NAME",
+											"type": "Expression"
+										},
+										"PAR_DS_FILE_NAME": {
+											"value": "@concat(pipeline().parameters.PAR_PL_OUTPUT_FILE_NAME, '_', '.csv')",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
