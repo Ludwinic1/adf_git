@@ -2,12 +2,8 @@
 	"name": "DS_AZURESQL_FOR_EACH",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureSqlDatabase188888888",
-			"type": "LinkedServiceReference",
-			"parameters": {
-				"UserName": "ludwinic",
-				"databaseName": "njl-sql-db"
-			}
+			"referenceName": "LS_REAL_AZURE_SQL_DB",
+			"type": "LinkedServiceReference"
 		},
 		"parameters": {
 			"EmployeeName": {
