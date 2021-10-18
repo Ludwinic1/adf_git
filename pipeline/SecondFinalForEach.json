@@ -18,7 +18,7 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "SELECT * FROM information_schema.tables where table_type = 'BASE TABLE')",
+							"value": "SELECT * FROM information_schema.tables where table_type = '@{pipeline().parameters.TableType}'",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
@@ -26,22 +26,16 @@
 					},
 					"dataset": {
 						"referenceName": "DS_SQL_DB_SECOND_LOOKUP_TABLE_NAMES",
-						"type": "DatasetReference",
-						"parameters": {
-							"TableName": {
-								"value": "@pipeline().parameters.TableName",
-								"type": "Expression"
-							}
-						}
+						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
 				}
 			}
 		],
 		"parameters": {
-			"TableName": {
+			"TableType": {
 				"type": "string",
-				"defaultValue": "information_schema.tables"
+				"defaultValue": "BASE TABLE"
 			}
 		},
 		"folder": {
