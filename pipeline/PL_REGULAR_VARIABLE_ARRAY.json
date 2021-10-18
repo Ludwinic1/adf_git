@@ -3,33 +3,43 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Append variable1",
-				"type": "AppendVariable",
+				"name": "ForEach1",
+				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "Lookup1",
+						"activity": "Get Metadata1",
 						"dependencyConditions": [
 							"Succeeded"
 						]
 					}
 				],
-				"userProperties": [
-					{
-						"name": "FirstUserProp",
-						"value": "somepropertyValue"
-					}
-				],
+				"userProperties": [],
 				"typeProperties": {
-					"variableName": "ListOfFiles",
-					"value": {
-						"value": "@activity('Lookup1').output.value[0].id",
+					"items": {
+						"value": "@activity('Lookup1').output.value",
 						"type": "Expression"
-					}
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "Append variable1",
+							"type": "AppendVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "ListOfFiles",
+								"value": {
+									"value": "@item().id",
+									"type": "Expression"
+								}
+							}
+						}
+					]
 				}
 			},
 			{
-				"name": "Lookup1",
-				"type": "Lookup",
+				"name": "Get Metadata1",
+				"type": "GetMetadata",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -40,20 +50,20 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"source": {
-						"type": "AzureSqlSource",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
-					},
 					"dataset": {
-						"referenceName": "DS_SQL_TABLES_SECOND_FOR_EACH",
-						"type": "DatasetReference",
-						"parameters": {
-							"TableName": "employees",
-							"SchemaName": "dbo"
-						}
+						"referenceName": "DS_APPEND_VARIABLE_DATALAKE",
+						"type": "DatasetReference"
 					},
-					"firstRowOnly": false
+					"fieldList": [
+						"columnCount"
+					],
+					"storeSettings": {
+						"type": "AzureBlobFSReadSettings",
+						"enablePartitionDiscovery": false
+					},
+					"formatSettings": {
+						"type": "DelimitedTextReadSettings"
+					}
 				}
 			}
 		],
