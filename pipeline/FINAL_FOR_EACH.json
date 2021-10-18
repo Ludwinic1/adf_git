@@ -90,10 +90,7 @@
 									"referenceName": "DS_AZURESQL_FOR_EACH",
 									"type": "DatasetReference",
 									"parameters": {
-										"EmployeeName": {
-											"value": "@item().employee_name",
-											"type": "Expression"
-										}
+										"EmployeeName": "@item().employee_name"
 									}
 								}
 							],
