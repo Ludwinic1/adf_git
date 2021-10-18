@@ -1,0 +1,26 @@
+{
+	"name": "DS_FOR_EACH_OUTPUT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DataLake2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"MyFolderPath": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "first-container"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

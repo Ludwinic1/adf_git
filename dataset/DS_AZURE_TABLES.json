@@ -1,0 +1,15 @@
+{
+	"name": "DS_AZURE_TABLES",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_REAL_AZURE_SQL_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "ForEach"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}

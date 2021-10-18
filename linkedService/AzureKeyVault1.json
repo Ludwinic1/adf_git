@@ -1,7 +1,4 @@
-{
-	"name": "AzureKeyVault1",
-	"properties": {
-		"annotations": [],
+
 		"type": "AzureKeyVault",
 		"typeProperties": {
 			"baseUrl": "https://njl-keyvault.vault.azure.net/"

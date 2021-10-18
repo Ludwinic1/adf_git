@@ -1,0 +1,14 @@
+{
+	"name": "DataLake2",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://storagenjl.dfs.core.windows.net"
+		},
+		"connectVia": {
+			"referenceName": "MyAzureIR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
