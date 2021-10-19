@@ -45,6 +45,8 @@
 						"value": "@activity('Lookup1').output.value",
 						"type": "Expression"
 					},
+					"isSequential": false,
+					"batchCount": "",
 					"activities": [
 						{
 							"name": "Copy data1",
@@ -111,6 +113,18 @@
 				}
 			}
 		],
+		"parameters": {
+			"BatchCount": {
+				"type": "int",
+				"defaultValue": 5
+			}
+		},
+		"variables": {
+			"b": {
+				"type": "String",
+				"defaultValue": "int(5)"
+			}
+		},
 		"folder": {
 			"name": "ForEach"
 		},
