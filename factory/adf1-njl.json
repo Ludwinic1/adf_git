@@ -1,5 +1,13 @@
 {
 	"name": "adf1-njl",
+	"properties": {
+		"globalParameters": {
+			"BatchCountGlobal": {
+				"type": "int",
+				"value": 5
+			}
+		}
+	},
 	"location": "centralus",
 	"identity": {
 		"type": "SystemAssigned",
