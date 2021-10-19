@@ -1,0 +1,19 @@
+{
+	"name": "dataflow3",
+	"properties": {
+		"folder": {
+			"name": "DataFlow"
+		},
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"name": "source1"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false) ~> "
+		}
+	}
+}
