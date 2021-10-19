@@ -1,8 +1,50 @@
 {
-	"name": "pipeline1",
+	"name": "PL_INCREMENT_VARIABLE",
 	"properties": {
-		"folder": {
-			"name": "Variables"
+		"activities": [
+			{
+				"name": "Set I",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Increment J",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "i",
+					"value": {
+						"value": "@variables('j')",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Increment J",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "j",
+					"value": {
+						"value": "@string(add(int(variables('i')), 1))",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"variables": {
+			"i": {
+				"type": "String",
+				"defaultValue": "0"
+			},
+			"j": {
+				"type": "String",
+				"defaultValue": "0"
+			}
 		},
 		"annotations": []
 	}
