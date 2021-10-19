@@ -1,0 +1,15 @@
+{
+	"name": "PL_UNTIL1",
+	"properties": {
+		"parameters": {
+			"EmployeeName": {
+				"type": "string",
+				"defaultValue": "Jane"
+			}
+		},
+		"folder": {
+			"name": "Until"
+		},
+		"annotations": []
+	}
+}

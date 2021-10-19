@@ -1,0 +1,71 @@
+{
+	"name": "PL_LOOKUP",
+	"properties": {
+		"activities": [
+			{
+				"name": "Lookup1",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": {
+							"value": "SELECT * FROm @{pipeline().parameters.TABLENAME}",
+							"type": "Expression"
+						},
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "DS_AZURE_SQL_LOOKUP",
+						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Lookup1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "OneRow",
+					"value": {
+						"value": "@activity('Lookup1').output.value[1].employee_name",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"TABLENAME": {
+				"type": "string",
+				"defaultValue": "employees"
+			}
+		},
+		"variables": {
+			"OneRow": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "LOOKUP"
+		},
+		"annotations": []
+	}
+}
