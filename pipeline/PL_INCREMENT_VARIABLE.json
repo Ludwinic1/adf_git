@@ -46,6 +46,9 @@
 				"defaultValue": "0"
 			}
 		},
+		"folder": {
+			"name": "Variables"
+		},
 		"annotations": []
 	}
 }
